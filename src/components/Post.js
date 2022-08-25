@@ -1,6 +1,16 @@
-function Post () {
+import { useState } from "react"
+
+function Post ({posti}) {
+    
+
+
+
     return(
-        <h1>Post</h1>
+        <div className='card'>
+            <h4>{posti.title}</h4>
+            <p>{posti.content}</p>
+            {/* <p>{user.name}</p> */}
+        </div>
     )
 }
 
