@@ -14,13 +14,19 @@ import { BrowserRouter,
 
 import Post from './components/Post';
 import Login from './components/Login';
+import Profile from "./components/Profile";
+import PostComment from "./components/PostComment";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(undefined)
 
   function handleNewUser(user){
 
-    if (user.id){
+    
+    if (user ===undefined){
+      setCurrentUser(null)
+    }
+    else if(user.id){
       setCurrentUser(user)
     }
     else {
@@ -39,7 +45,10 @@ function App() {
       <Routes>
         <Route path="/" element={<MainPage user={currentUser} />}>
           <Route path="/" element={<Login user={currentUser} handleNewUser={handleNewUser} />} />
-          <Route path="post" element={<PostsPage />} />
+          <Route path="post" element={<PostsPage user={currentUser} handleNewUser={handleNewUser}/>}/>
+          <Route path="post/single" element={<PostComment />} />
+          <Route path='profile' element={<Profile user={currentUser} handleNewUser={handleNewUser}/>} />
+          
         </Route>
       </Routes>
     </BrowserRouter>

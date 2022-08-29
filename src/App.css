@@ -2,16 +2,60 @@
   box-sizing: border-box;
   margin: 0px;
   font-family: sans-serif;
+  
+}
+
+body{
+  background-color: #f7f7f7;
 }
 
 .container{
   margin: auto;
   width: 80%;
+  /* text-align: center; */
 }
 
 .card{
-  border: 1px solid black;
+  border: 1px solid #00b3e6;
   margin: 5px;
   padding: 10px;
+  color: #444;
+  text-align: none;
+  /* text-shadow: .5px .5px .5px #00b3e6; */
+  /* background-color: rgba(77,77,86); */
+}
+
+.comment{
+  margin-top: 10px;
+}
+
+.center{
+  text-align: center;
+}
+
+.commentContainer{
+  width: 90%;
+  margin: auto;
+  margin-top: 25px;
+}
+
+.header{
+  display: flex;
+  align-self: flex-end;
+  align-items: flex-end;
+  font-size: 25px;
+  width: 25%;
+  justify-content: space-between;
   
+  /* justify-content: flex-end; */
+}
+
+.header a {
+  color: #444;
+  text-decoration: none;
+}
+
+.title{
+  text-align: center;
+  color: #444;
 }

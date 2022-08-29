@@ -10,10 +10,12 @@ function MainPage({user}){
 
     return(
         <>
-        <Header />
-        <h1>{user ? user.name : null}</h1>
+        <Header user={user}/>
+        {/* <h1>{user ? user.name : null}</h1> */}
 
-        <Outlet />
+        <div className="container">
+            <Outlet />
+        </div>
 
         </>
     )

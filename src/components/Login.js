@@ -14,7 +14,7 @@ if (user === 'invalid'){
         const name = e.target[0].value
         const password = e.target[1].value
         const checked = e.target[2].checked
-        console.log(checked)
+        console.log(name,password, checked)
         
         if (checked){
             fetch('http://localhost:3000/users', {
@@ -43,12 +43,25 @@ if (user === 'invalid'){
             })
         }
 
-        
     }
+        function handleClick(){
+            fetch('http://localhost:3000/sessions/destroy', {
+                method: 'DELETE'
+            })
+
+            handleNewUser(undefined)
+        }
+
+        // function handleLogOut(){
+            
+        // }
+
+        
 
 
     return(
         <>
+        <div className="center">
             {valid ? undefined : <h5>Please enter valid credentials</h5>}
             <form onSubmit={(e)=>handleSubmit(e)}>
                 <label>Username:</label>
@@ -57,13 +70,16 @@ if (user === 'invalid'){
                 <br></br>
                 <label>Password:</label>
                 <br></br>
-                <input type="text"></input>
+                <input type="password"></input>
                 <br></br>
                 <label>New User: </label>
                 <input value="accept" type="checkbox"></input>
                 <br></br>
-                <input type="submit"></input>
+                {<input type="submit"></input>}
+                
             </form>
+            {user? <button onClick={handleClick}>Sign Out: </button> : null}
+        </div>
         </>
     )
 }

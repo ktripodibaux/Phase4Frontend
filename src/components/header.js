@@ -1,14 +1,20 @@
 import { Link } from "react-router-dom";
 
-function Header() {
+function Header({user}) {
+
+    
 
 
     return (
         <>
-        <h1>header</h1>
-        <Link to="/" >Home</Link>
-        <br></br>
-        <Link to="/post">post</Link>
+            <div className="header">
+                <Link to="/" >Login</Link>
+                <br></br>
+                <Link to="/post">Posts</Link>
+                <br></br>
+                <Link to="profile">{user ? `${user.name}'s Profile` : "Profile"}</Link>
+            </div>
+        <h1 className="title">Flatiron Forum</h1>
 
         </>
     )
